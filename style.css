@@ -1,0 +1,450 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 16px;
+    line-height: 1.5;
+
+    color: black;
+
+}
+
+*,
+*:before,
+*:after,
+ul,
+li {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+section {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    height: 25vh;
+
+    padding: 5px 50px;
+}
+
+.first {
+    background-color: antiquewhite;
+}
+
+.first__box {
+    width: 100px;
+    height: 100px;
+
+    border: 10px solid blue;
+
+    animation: first-animation 1s linear 3;
+}
+
+@keyframes first-animation {
+    from {}
+
+    to {
+        transform: translateX(50vw);
+    }
+}
+
+.second {
+    background-color: lightgoldenrodyellow;
+}
+
+.second__box {
+    width: 100px;
+    height: 100px;
+
+    border: 10px solid rgb(36, 1, 131);
+
+    animation: first-animation 1s ease .1s infinite;
+}
+
+
+.third {
+    background-color: lightpink;
+}
+
+.third__box {
+    width: 100px;
+    height: 100px;
+
+    border: 10px solid green;
+    background-color: transparent;
+
+    animation: third-animation 2s ease-in 2s  /* forwards */;
+}
+
+
+@keyframes third-animation {
+    from {}
+
+    to {
+        background-color: green;
+    }
+}
+
+.fourth {
+    height: 45vh;
+
+    background-color: violet;
+}
+
+.fourth__box {
+    width: 100px;
+    height: 100px;
+
+    border: 10px solid pink;
+
+    animation: fourth-animation 5s ease-in-out;
+}
+
+
+@keyframes fourth-animation {
+    from {}
+
+    25% {
+        transform: translate(50vw, 0);
+    }
+
+    50% {
+        transform: translate(50vw, 8vh);
+    }
+
+    75% {
+        transform: translate(0, 8vh);
+    }
+
+    to {
+        transform: translateY(0, 8vh);
+    }
+}
+
+.fifth {
+    height: 45vh;
+
+    background-color: slateblue;
+}
+
+.fifth__box {
+    width: 100px;
+    height: 100px;
+
+    border: 10px solid pink;
+
+    animation: fifth-animation 5s ease-in-out;
+}
+
+
+@keyframes fifth-animation {
+    from {}
+
+    24% {
+        background-color: transparent;
+    }
+
+    25% {
+        transform: translate(50vw, 0);
+        background-color: pink;
+    }
+
+    50% {
+        transform: translate(50vw, 8vh);
+        background-color: transparent;
+    }
+
+    75% {
+        transform: translate(0, 8vh);
+        background-color: pink;
+    }
+
+    to {
+        transform: translateY(0, 8vh);
+        background-color: transparent;
+    }
+}
+
+.sixth {
+    background-color: thistle;
+}
+
+.progress {
+    width: 50vw;
+    height: 8vh;
+
+    border: 5px solid red;
+}
+
+.progress__line {
+    width: 0;
+    height: 100%;
+
+    background-color: red;
+
+    animation: progress 3s linear forwards;
+}
+
+@keyframes progress {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+.seventh {
+    background-color: peru;
+}
+
+.seventh .progress__line {
+    animation: progress-infinite 5s ease-in-out infinite;
+}
+
+@keyframes progress-infinite {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+.eighth {
+    align-items: start;
+
+    height: 50vh;
+
+    background-color: salmon;
+}
+
+.eighth__ball {
+    width: 50px;
+    height: 50px;
+
+    background-color: red;
+    border-radius: 50%;
+
+    animation: eighth-animation 5s linear;
+}
+
+@keyframes eighth-animation {
+    0% {}
+
+    20% {
+        transform: translate(5vw, 35vh);
+    }
+
+    30% {
+        transform: translate(15vw, 20vh);
+    }
+
+    40% {
+        transform: translate(20vw, 35vh);
+    }
+
+    50% {
+        transform: translate(25vw, 25vh);
+    }
+
+    60% {
+        transform: translate(30vw, 35vh);
+    }
+
+    70% {
+        transform: translate(35vw, 30vh);
+    }
+
+    100% {
+        transform: translate(40vw, 35vh);
+    }
+}
+
+.ninth {
+    background-color: wheat;
+}
+
+.ninth__box {
+    width: 100px;
+    height: 100px;
+
+    background-color: turquoise;
+
+    animation: ninth-animation 5s ease-in-out infinite alternate paused;
+}
+
+.ninth__box:hover {
+    animation: ninth-animation 5s ease-in-out infinite alternate running;
+}
+
+
+@keyframes ninth-animation {
+    from {
+        width: 100px;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+
+.tenth {
+    justify-content: center;
+    background-color: white;
+
+    height: 100vh;
+}
+
+.tenth__box {
+    display: flex;
+    justify-content: space-between;
+
+    width: 350px;
+    height: 400px;
+
+    background-color: #f3ebeb;
+    border: 1px solid rgb(197, 186, 186);
+    box-shadow: 2px 2px 15px rgb(197, 186, 186);
+    border-radius: 5px;
+
+    overflow: hidden;
+}
+
+.tenth__nav {
+    flex: 0 1 35%;
+
+    padding: 50px 5px;
+
+    background-color: #cfc6c6;
+    box-shadow: 2px 2px 15px rgb(153, 143, 143);
+    border-radius: 5px;
+    text-align: center;
+
+    transform: translateX(-150%);
+    transition: transform .5s linear;
+}
+
+
+.tenth__box:hover .tenth__nav{
+    transform: translateX(0);
+}
+
+.tenth__item {
+    padding-bottom: 30px;
+
+    transition: all .5s linear;
+}
+
+.tenth__item:hover {
+    background-color: rgb(44, 35, 124);
+}
+
+.tenth__link {
+    color: #000;
+    text-transform: uppercase;
+
+    transition: all .3s linear;
+}
+
+.tenth__item:hover .tenth__link {
+    color:#fff;
+}
+
+
+.tenth__burger {
+    width: 30px;
+    height: 25px;
+
+    margin: 10px;
+
+    background-color: rgb(44, 35, 124);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    transition: all .5s linear;
+    transform: translateX(150%);
+}
+
+
+.tenth__box:hover .tenth__burger {
+    transform: translateX(0);
+}
+
+
+.tenth__burger:hover {
+    box-shadow: 3px 3px 5px rgb(44, 35, 124);
+}
+
+.tenth__line {
+    display: block;
+
+    position: relative;
+    left: 5px;
+
+    width: 20px;
+    height: 2px;
+
+    border-radius: 1px;
+    background-color: white;
+}
+
+.tenth__line::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    right: 0px;
+    z-index: 1;
+
+    width: 20px;
+    height: 2px;
+
+    border-radius: 1px;
+    background-color: white;
+}
+
+.tenth__line::after {
+    content: "";
+    position: absolute;
+    bottom: 5px;
+    right: 0px;
+
+    z-index: 1;
+
+    width: 20px;
+    height: 2px;
+
+    border-radius: 1px;
+    background-color: white;
+}
+
+
+.eleventh {
+    justify-content: center;
+    background-color: wheat;
+}
+
+.eleventh__heart {
+    width: 95px;
+    height: 95px;
+
+    background: url(./img/heart_sprite.png) 35px center no-repeat;
+
+
+
+}
+
+
+.eleventh__heart:hover {
+
+    background-position: -2765px center;
+
+    transition: background-position 1s steps(29);
+
+}
