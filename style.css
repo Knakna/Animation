@@ -4,7 +4,7 @@ body {
     line-height: 1.5;
 
     color: black;
-
+    text-transform: uppercase;
 }
 
 *,
@@ -29,83 +29,99 @@ section {
     padding: 5px 50px;
 }
 
-.first {
+h2 {
+    margin-right: 10px;
+    width: 100px;
+
+	animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+/* https://animista.net/play/text/tracking-in/tracking-in-expand */
+
+  @keyframes tracking-in-expand {
+    0% {
+      letter-spacing: -0.5em;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+.task1 {
     background-color: antiquewhite;
 }
 
-.first__box {
+.task1__box {
     width: 100px;
     height: 100px;
 
     border: 10px solid blue;
 
-    animation: first-animation 1s linear 3;
+    animation: task1-animation 1s linear 3;
 }
 
-@keyframes first-animation {
-    from {}
-
+@keyframes task1-animation {
     to {
         transform: translateX(50vw);
     }
 }
 
-.second {
+.task2 {
     background-color: lightgoldenrodyellow;
 }
 
-.second__box {
+.task2__box {
     width: 100px;
     height: 100px;
 
     border: 10px solid rgb(36, 1, 131);
 
-    animation: first-animation 1s ease .1s infinite;
+    animation: task1-animation 1s ease .1s infinite;
 }
 
 
-.third {
+.task3 {
     background-color: lightpink;
 }
 
-.third__box {
+.task3__box {
     width: 100px;
     height: 100px;
 
     border: 10px solid green;
     background-color: transparent;
 
-    animation: third-animation 2s ease-in 2s  /* forwards */;
+    animation: task3-animation 2s ease-in 2s backwards;
 }
 
 
-@keyframes third-animation {
-    from {}
-
+@keyframes task3-animation {
     to {
         background-color: green;
     }
 }
 
-.fourth {
+.task4 {
     height: 45vh;
 
     background-color: violet;
 }
 
-.fourth__box {
+.task4__box {
     width: 100px;
     height: 100px;
 
     border: 10px solid pink;
 
-    animation: fourth-animation 5s ease-in-out;
+    animation: task4-animation 5s ease-in-out;
+    animation-iteration-count: infinite;
 }
 
 
-@keyframes fourth-animation {
-    from {}
-
+@keyframes task4-animation {
     25% {
         transform: translate(50vw, 0);
     }
@@ -118,31 +134,29 @@ section {
         transform: translate(0, 8vh);
     }
 
-    to {
+    100% {
         transform: translateY(0, 8vh);
     }
 }
 
-.fifth {
+.task5 {
     height: 45vh;
 
     background-color: slateblue;
 }
 
-.fifth__box {
+.task5__box {
     width: 100px;
     height: 100px;
 
     border: 10px solid pink;
 
-    animation: fifth-animation 5s ease-in-out;
+    animation: task5-animation 5s ease-in-out;
 }
 
 
-@keyframes fifth-animation {
-    from {}
-
-    24% {
+@keyframes task5-animation {
+    20% {
         background-color: transparent;
     }
 
@@ -151,8 +165,16 @@ section {
         background-color: pink;
     }
 
+    30% {
+        background-color: pink;
+    }
+
     50% {
         transform: translate(50vw, 8vh);
+        background-color: transparent;
+    }
+
+    60% {
         background-color: transparent;
     }
 
@@ -161,13 +183,13 @@ section {
         background-color: pink;
     }
 
-    to {
+    100% {
         transform: translateY(0, 8vh);
         background-color: transparent;
     }
 }
 
-.sixth {
+.task6 {
     background-color: thistle;
 }
 
@@ -197,11 +219,11 @@ section {
     }
 }
 
-.seventh {
-    background-color: peru;
+.task7 {
+    background-color: rgb(245, 206, 167);
 }
 
-.seventh .progress__line {
+.task7 .progress__line {
     animation: progress-infinite 5s ease-in-out infinite;
 }
 
@@ -215,7 +237,7 @@ section {
     }
 }
 
-.eighth {
+.task8 {
     align-items: start;
 
     height: 50vh;
@@ -223,19 +245,17 @@ section {
     background-color: salmon;
 }
 
-.eighth__ball {
+.task8__ball {
     width: 50px;
     height: 50px;
 
     background-color: red;
     border-radius: 50%;
 
-    animation: eighth-animation 5s linear;
+    animation: task8-animation 5s linear;
 }
 
-@keyframes eighth-animation {
-    0% {}
-
+@keyframes task8-animation {
     20% {
         transform: translate(5vw, 35vh);
     }
@@ -265,45 +285,48 @@ section {
     }
 }
 
-.ninth {
-    background-color: wheat;
+.task9 {
+    background-color: rgb(245, 207, 200);
 }
 
-.ninth__box {
+.task9__box {
     width: 100px;
     height: 100px;
 
     background-color: turquoise;
 
-    animation: ninth-animation 5s ease-in-out infinite alternate paused;
+    animation: task9-animation 5s ease-in-out infinite alternate paused;
 }
 
-.ninth__box:hover {
-    animation: ninth-animation 5s ease-in-out infinite alternate running;
+.task9__box:hover {
+    animation: task9-animation 5s ease-in-out infinite alternate running;
 }
 
 
-@keyframes ninth-animation {
+@keyframes task9-animation {
     from {
         width: 100px;
     }
 
     to {
-        width: 100%;
+        width: 90%;
     }
 }
 
 
-.tenth {
+.task10 {
+    flex-direction: column;
     justify-content: center;
     background-color: white;
 
     height: 100vh;
 }
 
-.tenth__box {
+.task10__box {
     display: flex;
     justify-content: space-between;
+
+    margin-top: 10px;
 
     width: 350px;
     height: 400px;
@@ -316,7 +339,7 @@ section {
     overflow: hidden;
 }
 
-.tenth__nav {
+.task10__nav {
     flex: 0 1 35%;
 
     padding: 50px 5px;
@@ -331,33 +354,33 @@ section {
 }
 
 
-.tenth__box:hover .tenth__nav{
+.task10__box:hover .task10__nav {
     transform: translateX(0);
 }
 
-.tenth__item {
+.task10__item {
     padding-bottom: 30px;
 
     transition: all .5s linear;
 }
 
-.tenth__item:hover {
+.task10__item:hover {
     background-color: rgb(44, 35, 124);
 }
 
-.tenth__link {
+.task10__link {
     color: #000;
     text-transform: uppercase;
 
     transition: all .3s linear;
 }
 
-.tenth__item:hover .tenth__link {
-    color:#fff;
+.task10__item:hover .task10__link {
+    color: #fff;
 }
 
 
-.tenth__burger {
+.task10__burger {
     width: 30px;
     height: 25px;
 
@@ -373,16 +396,16 @@ section {
 }
 
 
-.tenth__box:hover .tenth__burger {
+.task10__box:hover .task10__burger {
     transform: translateX(0);
 }
 
 
-.tenth__burger:hover {
+.task10__burger:hover {
     box-shadow: 3px 3px 5px rgb(44, 35, 124);
 }
 
-.tenth__line {
+.task10__line {
     display: block;
 
     position: relative;
@@ -395,7 +418,7 @@ section {
     background-color: white;
 }
 
-.tenth__line::before {
+.task10__line::before {
     content: "";
     position: absolute;
     top: 5px;
@@ -409,7 +432,7 @@ section {
     background-color: white;
 }
 
-.tenth__line::after {
+.task10__line::after {
     content: "";
     position: absolute;
     bottom: 5px;
@@ -425,26 +448,40 @@ section {
 }
 
 
-.eleventh {
+.task11 {
     justify-content: center;
     background-color: wheat;
 }
 
-.eleventh__heart {
-    width: 95px;
-    height: 95px;
+.task11__heart {
+    width: 97px;
+    height: 97px;
 
     background: url(./img/heart_sprite.png) 35px center no-repeat;
-
-
-
 }
 
 
-.eleventh__heart:hover {
-
+.task11__heart:hover {
     background-position: -2765px center;
 
-    transition: background-position 1s steps(29);
+    transition: background-position 1s steps(28);
+}
 
+.task12 {
+    justify-content: center;
+    background-color: rgb(241, 180, 129);
+}
+
+.task12__star {
+    width: 65px;
+    height: 50px;
+
+    background: url(./img/star-sprite.png) no-repeat;
+}
+
+
+.task12__star:hover {
+    background-position: -3519px 0;
+
+    transition: background-position 1s steps(55);
 }
